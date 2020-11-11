@@ -1,0 +1,36 @@
+<div class="spacex-details-wrap" fxLayout="column" fxLayout.gt-sm="row">
+  <aside class="spacex-filter-side" fxFlex="20%">
+    <p class="spacex-details-hdr">Filters</p>
+    <div class="filter-wraps">
+      <div class="wrap-hdr" fxLayout="row" fxLayoutAlign="center center">
+        <span>Launch Year</span>
+      </div>
+      <div class="wrapper-content">
+        <ul fxLayout="row wrap">
+          <li fxFlex="50%"  *ngFor="let years of yearsOfSpaceX" [ngClass]="{'active': isSelectedYears(years)}"><a href="javascript:void(0)" (click)="selectYear(years)" [routerLink]="['/']" [queryParams]="{'years': years,'successfulLaunch': selectedLaunch, 'successfulLanding': selectedLanding}" >{{years}}</a></li>
+        </ul>
+      </div>
+
+      <div class="wrap-hdr" fxLayout="row" fxLayoutAlign="center center">
+        <span>Successful Launch</span>
+      </div>
+      <div class="wrapper-content">
+        <ul fxLayout="row wrap">
+          <li fxFlex="50%"  *ngFor="let booleans of booleanFilter" [ngClass]="{'active': isSelectedLaunch(booleans)}"><a href="javascript:void(0)" (click)="selectLaunch(booleans)" [routerLink]="['/']" [queryParams]="{'years': selectedYear ,'successfulLaunch': booleans, 'successfulLanding': selectedLanding}">{{booleans}}</a></li>
+        </ul>
+      </div>
+
+      <div class="wrap-hdr" fxLayout="row" fxLayoutAlign="center center">
+        <span>Successful Landing</span>
+      </div>
+      <div class="wrapper-content">
+        <ul fxLayout="row wrap">
+          <li fxFlex="50%"  *ngFor="let booleans of booleanFilter; let i=index" [ngClass]="{'active': isSelectedLand(booleans)}"><a href="javascript:void(0)" (click)="selectLand(booleans)" [routerLink]="['/']" [queryParams]="{'years': selectedYear ,'successfulLaunch': selectedLaunch, 'successfulLanding': booleans}" >{{booleans}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <div class="spacex-content-side" fxFlex="100%">
+    <app-details-section (sendYear)="getYear($event)" (sendLand)="getLand($event)" (sendLaunch)="getLaunch($event)"></app-details-section>
+  </div>
+</div>

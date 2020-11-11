@@ -1,0 +1,551 @@
+@import "mixins";
+@import "variables";
+
+/*****************************************
+             Anchor Styles
+/*****************************************/
+a{
+  color: $blue-col;
+  font-size: calculateRem(14px);
+  text-decoration: none;
+  &:hover, &:focus{
+    text-decoration: none;
+    text-underline: none;
+  }
+}
+/****************************************
+   1.4 font sizes
+****************************************/
+.font-18 {
+  font-size: calculateRem($font-base) + calculateRem(4px);
+}
+
+.font-20 {
+  font-size: calculateRem($font-base) + calculateRem(6px);
+}
+
+.font-16 {
+  font-size: calculateRem($font-base) + calculateRem(2px);
+}
+
+.font-10 {
+  font-size: calculateRem($font-base) - calculateRem(4px);
+}
+
+.font-12 {
+  font-size: calculateRem($font-base) - calculateRem(2px);
+}
+
+.font-13 {
+  font-size: calculateRem($font-base) - calculateRem(1px);
+}
+
+.font-14 {
+  font-size: calculateRem($font-base);
+}
+
+.font-30 {
+  font-size: calculateRem($font-base) + calculateRem(16px);
+}
+
+.font-24 {
+  font-size: calculateRem($font-base) + calculateRem(10px);
+}
+.text-small {
+  font-size: 12px !important;
+}
+/****************************************
+   1.5 Position Styles
+****************************************/
+.ps-abs {
+  position: absolute;
+}
+
+.ps-rel {
+  position: relative;
+}
+
+.ps-fix {
+  position: fixed !important;
+}
+
+/****************************************
+   1.6 Display Styles
+****************************************/
+.dis-inline {
+  display: inline;
+}
+
+.dis-block {
+  display: block;
+}
+
+.dis-inline-block {
+  display: inline-block;
+}
+
+.dis-inline-table {
+  display: inline-table;
+}
+
+.dis-table {
+  display: table;
+}
+
+.dis-none {
+  display: none !important;
+}
+
+.dis-table-cell {
+  display: table-cell;
+}
+
+.dis-flex {
+  display: flex;
+}
+
+/****************************************
+   1.7 Overflow Styles
+****************************************/
+
+.overflow-both {
+  overflow: auto;
+}
+
+.overflow-x-hidden {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/****************************************
+    1.8 Vertical Align
+****************************************/
+
+.vtcl-align-tp {
+  vertical-align: top;
+}
+
+.vtcl-align-mdl {
+  vertical-align: middle;
+}
+
+.vtcl-align-btm {
+  vertical-align: bottom;
+}
+
+.vtcl-align-sup {
+  vertical-align: super;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+/******************************
+Webkit Scrolls
+******************************/
+
+@media screen and (min-width: 1170px) {
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $scrollbarthumb;
+    border: 0 none $white;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $scrollbarthumb-hover;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: $scrollbarthumb-active;
+  }
+  ::-webkit-scrollbar-track {
+    background: $white;
+    border: 0 none $white;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: $white;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: $white;
+  }
+}
+*{
+  scrollbar-color:   #e1e1e1 $scrollbarthumb-active !important;
+  scrollbar-width: none !important;
+}
+
+/******************************
+    Width Controls
+******************************/
+
+.width-100 {
+  width: 100%;
+}
+.width-90 {
+  width: 90%;
+}
+.width-85 {
+  width: 85%;
+}
+.width-75 {
+  width: 75%;
+}
+
+.width-70 {
+  width: 70%;
+}
+
+.width-60 {
+  width: 60%;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.width-30 {
+  width: 30%;
+}
+
+.width-25 {
+  width: 25%;
+}
+.width-15 {
+  width: 15%;
+}
+.height-100{
+  height: 100%;
+}
+.height-50{
+  height: 50%;
+}
+.height-75{
+  height: 75%;
+}
+.width-73{
+  width: 73%;
+}
+.width-78{
+  width: 78%;
+}
+// 6.5 Unordered/Ordered List Styles
+ul {
+  margin: $padding-none;
+  padding: $padding-none;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+//Bullet Listing
+.bullet-list {
+  margin-left: 15px;
+
+  li {
+    list-style-type: disc;
+    margin-bottom: 30px;
+  }
+}
+/****************************************
+   1.4 Padding styles
+****************************************/
+.pd-0 {
+  padding: $padding-base-5 - 5 !important;
+}
+
+.pd-5 {
+  padding: $padding-base-5;
+}
+
+.pd-10 {
+  padding: $padding-base-5 + 5
+}
+
+.pd-15 {
+  padding: $padding-base-5 + 10
+}
+
+.pd-20 {
+  padding: $padding-base-5 + 15
+}
+
+.pd-t0 {
+  padding-top: $padding-base-5 - 5 !important;
+}
+
+.pd-t05 {
+  padding-top: $padding-base-5;
+}
+
+.pd-t10 {
+  padding-top: $padding-base-5 * 2 !important;
+}
+
+.pd-t15 {
+  padding-top: $padding-base-5 * 3 !important;
+}
+
+.pd-t20 {
+  padding-top: $padding-base-5 * 4 !important;
+}
+
+.pd-b0 {
+  padding-bottom: $padding-base-5 - 5 !important;
+}
+
+.pd-b05 {
+  padding-bottom: $padding-base-5 !important;
+}
+
+.pd-b10 {
+  padding-bottom: $padding-base-5 * 2 !important;
+}
+
+.pd-b15 {
+  padding-bottom: $padding-base-5 * 3 !important;
+}
+
+.pd-b20 {
+  padding-bottom: $padding-base-5 * 4 !important;
+}
+
+.pd-b25 {
+  padding-bottom: $padding-base-5 * 5 !important;
+}
+
+.pd-b30 {
+  padding-bottom: $padding-base-5 * 6 !important;
+}
+
+.pd-b40 {
+  padding-bottom: $padding-base-5 * 8 !important;
+}
+
+.pd-l0 {
+  padding-left: $padding-base-5 - 5 !important;
+}
+
+.pd-l05 {
+  padding-left: $padding-base-5 !important;
+}
+
+.pd-l10 {
+  padding-left: $padding-base-5 * 2 !important;
+}
+
+.pd-l15 {
+  padding-left: $padding-base-5 * 3 !important;
+}
+
+.pd-l20 {
+  padding-left: $padding-base-5 * 4 !important;
+}
+
+.pd-l30 {
+  padding-left: $padding-base-5 * 6 !important;
+}
+
+.pd-r0 {
+  padding-right: $padding-base-5 - 5 !important;
+}
+
+.pd-r05 {
+  padding-right: $padding-base-5;
+}
+
+.pd-r10 {
+  padding-right: $padding-base-5 * 2 !important;
+}
+
+.pd-r15 {
+  padding-right: $padding-base-5 * 3 !important;
+}
+
+.pd-r20 {
+  padding-right: $padding-base-5 * 4 !important;
+}
+
+.pd-r30 {
+  padding-right: $padding-base-5 * 6 !important;
+}
+
+.pd-r100 {
+  padding-right: $padding-base-5 * 20;
+}
+
+/****************************************
+   1.5 Margin styles
+****************************************/
+.mr0 {
+  margin: $margin-base-5 - 5;
+}
+
+.mr-t0 {
+  margin-top: $margin-base-5 - 5;
+}
+
+.mr-t05 {
+  margin-top: $margin-base-5 !important;
+}
+
+.mr-t10 {
+  margin-top: $margin-base-5 * 2;
+}
+
+.mr-t15 {
+  margin-top: $margin-base-5 * 3 !important;
+}
+
+.mr-t20 {
+  margin-top: $margin-base-5 * 4;
+}
+
+.mr-t25 {
+  margin-top: $margin-base-5 * 5;
+}
+
+.mr-t30 {
+  margin-top: $margin-base-5 * 6;
+}
+
+.mr-t35 {
+  margin-top: $margin-base-5 * 7;
+}
+
+.mr-t50 {
+  margin-top: $margin-base-5 * 10;
+}
+
+.mr-t160 {
+  margin-top: $margin-base-5 * 32;
+}
+
+.mr-b0 {
+  margin-bottom: $margin-base-5 - 5 !important;
+}
+
+.mr-b03 {
+  margin-bottom: $margin-base-5 - 2;
+}
+
+.mr-b05 {
+  margin-bottom: $margin-base-5;
+}
+
+.mr-b10 {
+  margin-bottom: $margin-base-5 * 2;
+}
+
+.mr-b15 {
+  margin-bottom: $margin-base-5 * 3;
+}
+
+.mr-b20 {
+  margin-bottom: $margin-base-5 * 4 !important;
+}
+
+.mr-b25 {
+  margin-bottom: $margin-base-5 * 5 !important;
+}
+
+.mr-b30 {
+  margin-bottom: $margin-base-5 * 6;
+}
+
+.mr-b35 {
+  margin-bottom: $margin-base-5 * 7;
+}
+
+.mr-r0 {
+  margin-right: $margin-base-5 - 5;
+}
+
+.mr-r05 {
+  margin-right: $margin-base-5;
+}
+
+.mr-r10 {
+  margin-right: $margin-base-5 * 2;
+}
+
+.mr-r15 {
+  margin-right: $margin-base-5 * 3;
+}
+
+.mr-r20 {
+  margin-right: $margin-base-5 * 4;
+}
+
+.mr-r25 {
+  margin-right: $margin-base-5 * 5;
+}
+
+.mr-r30 {
+  margin-right: $margin-base-5 * 6;
+}
+
+.mr-r35 {
+  margin-right: $margin-base-5 * 7;
+}
+
+.mr-5 {
+  margin-left: $margin-base-5;
+}
+
+.mr-l0 {
+  margin-left: $margin-base-5 - 5;
+}
+
+.mr-l5 {
+  margin-left: $margin-base-5;
+}
+
+.mr-l10 {
+  margin-left: $margin-base-5 * 2;
+}
+
+.mr-l15 {
+  margin-left: $margin-base-5 * 3;
+}
+
+.mr-l20 {
+  margin-left: $margin-base-5 * 4;
+}
+
+.mr-l25 {
+  margin-left: $margin-base-5 * 5;
+}
+
+.mr-l30 {
+  margin-left: $margin-base-5 * 6;
+}
+
+.mr-t-30 {
+  margin-top: $margin-base-5 - 35 !important;
+}
+.text-center{
+  text-align: center;
+}

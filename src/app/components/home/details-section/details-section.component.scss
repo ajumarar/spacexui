@@ -1,0 +1,112 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+.details-wrap{
+  height: calc(100vh - 85px);
+  overflow-y: scroll;
+  .satelite-wrap{
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 12px;
+    background-color: white;
+    .image-wrap{
+      text-align: center;
+      padding: 10px;
+      background-color: #f6f6f6;
+      img{
+        height: 220px;
+        width: auto;
+      }
+    }
+    .details{
+      span{
+        color: #3F51B5;
+        font-weight: $font-family-semi;
+        text-transform: capitalize;
+      ;
+      }
+      .mission-name{
+        font-weight: $font-family-semibold;
+        font-size: 14px;
+        color: #3F51B5;
+      }
+      .hdr{
+        font-size: 12px;
+        font-weight: $font-family-bold;
+        color: #333;
+        margin-left: 0 !important;
+      }
+      .mission-id{
+        span{
+          display: inline-block;
+          margin-top: 5px;
+          font-size: 12px;
+          margin-left: 4px;
+          .ids{
+            display: inline-block;
+            padding: 3px;
+            background-color: #e1e1e1;
+            border-radius: 3px;
+            margin: 0 4px;
+            font-size: 12px;
+            &:first-child{
+              //margin-left: 0;
+            }
+            &:last-child{
+              margin-right: 0;
+            }
+          }
+        }
+      }
+
+    }
+    &:first-child, &:nth-child(4), &:nth-child(2), &:nth-child(3){
+      margin-top: 0;
+    }
+  }
+}
+
+//Lazy Loading
+.animated-background {
+  animation-duration: 1.25s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #F6F6F6;
+  background: linear-gradient(to right, #Ffffff 8%, #c5e09d 18%, #FFFFFF 33%);
+  background-size: 800px 104px;
+  height: 96px;
+  position: relative;
+}
+
+.sat-lazy-loading-wrap {
+  height: 300px;
+  margin: 10px;
+    //background: #ffffff;
+  @extend .animated-background;
+}
+.no-data-info{
+  .material-icons{
+    color: #c5e09d;
+    font-size: 100px;
+    p{
+      font-size: 16px;
+      font-weight: $font-family-semibold;
+      a{
+        color: #3F51B5;
+      }
+    }
+  }
+}
+@media screen
+and (max-width :640px) {
+  ;
+  .details-wrap{
+    height: inherit;
+    .satelite-wrap{
+      margin: 10px 0 !important;
+    }
+  }
+
+}

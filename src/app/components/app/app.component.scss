@@ -1,0 +1,10 @@
+@import "../../../assets/styles/variables";
+.header-wrap{
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  span{
+    font-size: 18px;
+    font-weight: $font-family-semibold;
+  }
+}

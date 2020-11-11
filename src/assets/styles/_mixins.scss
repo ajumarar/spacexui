@@ -1,0 +1,314 @@
+@import "variables";
+/************************************************************************************
+
+=========================== 3 Mixins For Template ============================
+
+************************************************************************************/
+@function calculateRem($size) {
+  $remSize: $size / 14px;
+  @return $remSize * 1rem;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin top-border-radius($radius , $radius2) {
+  -webkit-border-radius: $radius $radius2 0 0;
+  -moz-border-radius: $radius $radius2 0 0;
+  -ms-border-radius: $radius $radius2 0 0;
+  border-radius: $radius $radius2 0 0;
+}
+
+@mixin top-left-border-radius($radius) {
+  -webkit-border-top-left-radius: $radius;
+  -moz-border-top-left-radius: $radius;
+  -ms-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin top-right-border-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  -moz-border-top-right-radius: $radius;
+  -ms-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin bottom-border-radius($radius , $radius2) {
+  -webkit-border-radius: 0 0 $radius $radius2;
+  -moz-border-radius: 0 0 $radius $radius2;
+  -ms-border-radius: 0 0 $radius $radius2;
+  border-radius: 0 0 $radius $radius2;
+}
+
+@mixin bottom-left-border-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-bottom-left-radius: $radius;
+  -ms-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin bottom-right-border-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-bottom-right-radius: $radius;
+  -ms-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin right-border-radius($radius , $radius2) {
+  -webkit-border-radius: 0 $radius $radius2 0 !important;
+  -moz-border-radius: 0 $radius $radius2 0 !important;
+  -ms-border-radius: 0 $radius $radius2 0 !important;
+  border-radius: 0 $radius $radius2 0 !important;
+}
+
+@mixin left-border-radius($radius , $radius2) {
+  -webkit-border-radius: $radius 0 0 $radius2 !important;
+  -moz-border-radius: $radius 0 0 $radius2 !important;
+  -ms-border-radius: $radius 0 0 $radius2 !important;
+  border-radius: $radius 0 0 $radius2 !important;
+}
+
+@mixin animation-reverse{
+  -webkit-animation-direction: reverse;
+  -moz-animation-direction: reverse;
+  -ms-animation-direction: reverse;
+  -o-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+  -ms-transform: translate($x, $y); // IE9 only
+  -o-transform: translate($x, $y);
+  transform: translate($x, $y);
+}
+
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+  -ms-transform: rotate($deg); // IE9 only
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin transition-transform($transition...) {
+  -webkit-transition: -webkit-transform $transition;
+  -moz-transition: -moz-transform $transition;
+  -o-transition: -o-transform $transition;
+  transition: transform $transition;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin box-shadow-none{
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+
+@mixin text-overflow{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(254, 193, 77, 0.7);
+    background-color: #f08200;
+    transform: scale(1);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(254, 193, 77, 0);
+    background-color: #f40008;
+    transform: scale(1.15);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(254, 193, 77, 0);
+    background-color: #f08200;
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(254, 193, 77, 0.7);
+    box-shadow: 0 0 0 0 rgba(254, 193, 77, 0.7);
+    background-color: #f08200;
+    transform: scale(1);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(254, 193, 77, 0);
+    box-shadow: 0 0 0 10px rgba(254, 193, 77, 0);
+    background-color: #f40008;
+    transform: scale(1.15);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(254, 193, 77, 0);
+    box-shadow: 0 0 0 0 rgba(254, 193, 77, 0);
+    background-color: #f08200;
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0
+  }
+  100% {
+    background-position: 468px 0
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0
+  }
+  100% {
+    background-position: 468px 0
+  }
+}
+
+
+@-webkit-keyframes mymove {
+  from {width: 0;}
+  to {width: 100%;}
+}
+
+@keyframes mymove {
+  from {width: 0;}
+  to {width: 100%;}
+}
+
+//Keyframes for success
+
+@keyframes scaleAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drawCircle {
+  0% {
+    stroke-dashoffset: $circle-length;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawCheck {
+  0% {
+    stroke-dashoffset: $check-length;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes zoomSome {
+  0%{
+    transform: scale(0);
+  }
+  10% {
+    transform: scale(0.1);
+  }
+  20% {
+    transform: scale(0.2);
+  }
+  30% {
+    transform: scale(0.3);
+  }
+  40% {
+    transform: scale(0.4);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(0.6);
+  }
+  70% {
+    transform: scale(0.7);
+  }
+  80% {
+    transform: scale(0.8);
+  }
+  90% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes loader-07 {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+// Animation
+@keyframes placeHolderShimmer{
+  0%{
+    background-position: -468px 0
+  }
+  100%{
+    background-position: 468px 0
+  }
+}

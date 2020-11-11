@@ -1,0 +1,51 @@
+<div class="details-wrap" fxLayout="row">
+  <div *ngIf="!lazyLoadActive" fxLayout="column" fxLayout.gt-sm="row wrap" fxLayoutAlign="{{detailsData.length === 0 ? 'center center' : ''}}" fxFlex="100">
+    <div class="satelite-wrap"  fxFlex="100" fxFlex.gt-sm="22%" *ngFor="let data of detailsData">
+      <div class="image-wrap">
+        <img src="assets/images/satellite.png">
+      </div>
+      <div class="details">
+        <h3 class="mission-name">{{data.mission_name}} #{{data.flight_number}}</h3>
+        <div class="mission-id">
+          <span class="hdr">Mission IDs : </span>
+          <span class="nil mr-l10" *ngIf="data.mission_id.length === 0">Nil</span>
+          <span class="" *ngIf="data.mission_id.length > 0">
+            <span class="ids" *ngFor="let ids of data.mission_id">
+              {{ids}}
+            </span>
+        </span>
+        </div>
+
+        <div>
+          <span class="hdr">Launch Year: </span>
+          <span class="font-12 mr-l10">{{data.launch_year}}</span>
+        </div>
+
+        <div>
+          <span class="hdr">Successful Launching: </span>
+          <span class="font-12 mr-l10">{{data.launch_success}}</span>
+        </div>
+
+
+        <div>
+          <span class="hdr">Successful Landing: </span>
+          <span class="font-12 mr-l10">True</span>
+        </div>
+
+      </div>
+    </div>
+    <div class="no-data" *ngIf="detailsData.length === 0">
+      <div class="no-data-info" fxLayout="column" fxLayoutAlign="center center">
+        <i class="material-icons">sentiment_very_dissatisfied</i>
+        <p>Uh-No data found for the selected filters</p>
+      </div>
+
+    </div>
+  </div>
+  <div fxLayout="row wrap" *ngIf="lazyLoadActive" fxFlex="100">
+    <div class="sat-lazy-loading-wrap" *ngFor="let number of lazyLoadNumber" fxFlex="22%"></div>
+  </div>
+
+
+
+</div>

@@ -1,0 +1,100 @@
+@import "commons";
+@import "fonts";
+@import "mixins";
+@import "variables";
+@import 'customthemes';
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$spaceX-app-primary: mat-palette($spaceXUi-primary);
+$spaceX-app-accent:  mat-palette($spaceXUi-accent, 200, 100, 400);
+$spaceX-app-warn:  mat-palette($spaceXUi-warn);
+
+// The warn palette is optional (defaults to red).
+$spaceX-app-warn:    mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as `color` or `typography`.
+$spaceX-app-theme: mat-light-theme($spaceX-app-primary, $spaceX-app-accent, $spaceX-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($spaceX-app-theme);
+
+
+$custom-typography: mat-typography-config(
+  $font-family: '"Open Sans", sans-serif',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(16px, 24px, 500)
+);
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Open Sans', sans-serif; background: #f6f6f6; overflow: hidden}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Open Sans', "Helvetica Neue", sans-serif; }
+
+//Webkit scrollbar
+@media screen and (min-width: 1170px) {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $scrollbarthumb;
+    border: 0 none $white;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $scrollbarthumb-hover;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: $scrollbarthumb-active;
+  }
+  ::-webkit-scrollbar-track {
+    background: $white;
+    border: 0 none $white;
+    border-radius: 50px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background: $white;
+  }
+  ::-webkit-scrollbar-track:active {
+    background: $white;
+  }
+}
+
+:root{
+  scrollbar-color:   $scrollbarthumb $white;
+  scrollbar-width: thin;
+}
+
+@media screen
+and (max-width :640px) {
+  html, body{
+    overflow: auto;
+  }
+}
+

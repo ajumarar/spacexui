@@ -1,0 +1,89 @@
+// Typography
+// -------------------------
+$font-base: 14px;
+
+$font-family-light: 300;
+$font-family-regular: 400;
+$font-family-semi: 600;
+$font-family-semibold: 700;
+$font-family-bold: 800;
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+$font-size-xlarge: $font-base + 10; // ~22px
+$font-size-large: $font-base + 4; // ~18px
+$font-size-medium: $font-base + 2; // ~16px
+$font-size-small: $font-base - 2; // ~12px
+$font-size-mini: $font-base - 4; // ~10px
+
+// Base Radius
+// -------------------------
+$base-border-radius: 4px !default;
+$border-radius-large: 6px !default;
+$border-radius-small: 3px !default;
+$border-radius-btn: 50px !default;
+
+
+// Base Spacings
+// -------------------------
+$margin-none: 0px !default;
+$margin-base-5: 5px !default;
+
+$padding-none: 0px !default;
+$padding-base-5: 5px !default;
+
+
+// Base Heights & Widths
+// -------------------------
+$base-height-auto: auto;
+$base-height-full: 100%;
+$base-min-height: 10px;
+$base-height: 10px;
+
+$base-width-auto: auto;
+$base-width-full: 100%;
+$base-min-width: 10px;
+$base-width: 10px;
+
+
+//Common
+$none: none;
+$dis-block: block;
+$dis-inblock: inline-block;
+
+//Positions
+$relative: relative;
+$absolute: absolute;
+
+
+//** Breakpoints
+// -------------------------
+$desktop-large-width: 1366px;
+$desktop-small-width: 1280px;
+$tablet-landscape: 1024px;
+$tablet-portrait: 768px;
+$tablet-width: 767px;
+$mobile-width: 480px;
+$mobile-width-small: 360px;
+$mobile-mini: 320px;
+
+
+//COLORS
+$blue-col: #3F51B5;
+$green-col: #4CAF50;
+$red-col: #F80000;
+$yellow-col: #f08200;
+$pale-black: #333;
+$white: #fff;
+
+//Scrollbar
+$scrollbarthumb: #e1e1e1;
+$scrollbarthumb-hover: #8a8a8a;
+$scrollbarthumb-active: #7e7e7e;
+$white: #fff;
+
+//For Success SVG
+$circle-length: 151px;
+$check-length: 36px;
+
